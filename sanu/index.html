@@ -2,12 +2,17 @@
 <!doctype html>
 <html lang="en">
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Happiest Birthday, Sanu ♡</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box
+}
 
 body{
   margin:0;
@@ -75,7 +80,12 @@ h1 span{
   color:#fff;
   cursor:pointer;
   font-weight:bold;
-  box-shadow:0 10px 30px #7c294833
+  box-shadow:0 10px 30px #7c294833;
+  transition:.25s
+}
+
+.btn:hover{
+  transform:translateY(-2px)
 }
 
 section{
@@ -117,7 +127,9 @@ h2{
 }
 
 @keyframes beat{
-  50%{transform:scale(1.2)}
+  50%{
+    transform:scale(1.2)
+  }
 }
 
 footer{
@@ -127,13 +139,18 @@ footer{
   margin-top:30px
 }
 
+
+/* =========================
+   FALLING HEARTS
+   ========================= */
+
 .p{
   position:fixed;
   top:-30px;
   font-size:20px;
   pointer-events:none;
   animation:fall 5s linear forwards;
-  z-index:5
+  z-index:20
 }
 
 @keyframes fall{
@@ -142,6 +159,11 @@ footer{
     opacity:0
   }
 }
+
+
+/* =========================
+   MUSIC
+   ========================= */
 
 .music{
   position:fixed;
@@ -153,9 +175,14 @@ footer{
   height:52px;
   background:#7c2948;
   color:#fff;
-  z-index:9;
+  z-index:30;
   cursor:pointer
 }
+
+
+/* =========================
+   PHOTO
+   ========================= */
 
 .photo{
   display:block;
@@ -167,7 +194,7 @@ footer{
 
 
 /* =========================
-   BIRTHDAY COUNTDOWN
+   COUNTDOWN
    ========================= */
 
 .countdown-title{
@@ -175,14 +202,14 @@ footer{
   font:14px Arial;
   letter-spacing:.15em;
   text-transform:uppercase;
-  color:#a45b70;
+  color:#a45b70
 }
 
 .countdown{
   display:flex;
   justify-content:center;
   gap:12px;
-  margin-top:15px;
+  margin-top:15px
 }
 
 .time-box{
@@ -191,13 +218,13 @@ footer{
   border-radius:18px;
   background:#ffffffaa;
   border:1px solid #7c294820;
-  box-shadow:0 8px 25px #7c294814;
+  box-shadow:0 8px 25px #7c294814
 }
 
 .time-number{
   display:block;
   font:bold 28px Arial;
-  color:#7c2948;
+  color:#7c2948
 }
 
 .time-label{
@@ -206,29 +233,329 @@ footer{
   font:10px Arial;
   letter-spacing:.12em;
   text-transform:uppercase;
-  color:#a45b70;
+  color:#a45b70
 }
+
+
+/* =========================
+   BIRTHDAY MESSAGE
+   ========================= */
 
 .birthday-message{
   display:none;
   margin-top:22px;
   font:bold 22px Arial;
   color:#7c2948;
-  animation:birthdayGlow 1.5s infinite alternate;
+  animation:birthdayGlow 1.5s infinite alternate
 }
 
 @keyframes birthdayGlow{
+
   from{
     transform:scale(1);
-    text-shadow:0 0 5px #f7c8d6;
+    text-shadow:0 0 5px #f7c8d6
   }
+
   to{
     transform:scale(1.05);
-    text-shadow:0 0 20px #f09ab5;
+    text-shadow:0 0 20px #f09ab5
   }
+
 }
 
+
+/* =========================
+   CAKE SURPRISE
+   ========================= */
+
+#cakeSurprise{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:15;
+  background:
+    radial-gradient(
+      circle at center,
+      #fff8fb 0%,
+      #ffeaf2 55%,
+      #fbd5e2 100%
+    );
+
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  padding:25px;
+}
+
+.cake-content{
+  width:100%;
+  max-width:600px;
+  animation:cakeAppear 1.2s ease
+}
+
+@keyframes cakeAppear{
+
+  from{
+    opacity:0;
+    transform:translateY(40px) scale(.85)
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1)
+  }
+
+}
+
+.cake-title{
+  font-size:clamp(28px,7vw,52px);
+  color:#7c2948;
+  margin-bottom:10px;
+  font-weight:500
+}
+
+.cake-subtitle{
+  font:18px/1.6 Arial;
+  color:#765966;
+  margin-bottom:35px
+}
+
+
+/* CAKE */
+
+.cake{
+  position:relative;
+  width:280px;
+  height:220px;
+  margin:0 auto 30px
+}
+
+.cake-top{
+  position:absolute;
+  width:250px;
+  height:55px;
+  left:15px;
+  top:65px;
+  background:#f8c5d5;
+  border-radius:50%;
+  z-index:3
+}
+
+.cake-top:after{
+  content:"";
+  position:absolute;
+  width:230px;
+  height:35px;
+  left:10px;
+  top:8px;
+  background:#fff1f6;
+  border-radius:50%
+}
+
+.cake-body{
+  position:absolute;
+  width:250px;
+  height:90px;
+  left:15px;
+  top:90px;
+  background:linear-gradient(
+    90deg,
+    #e89ab3,
+    #f6b7ca,
+    #e89ab3
+  );
+  border-radius:0 0 25px 25px;
+  z-index:2;
+  box-shadow:0 15px 30px #7c294833
+}
+
+.frosting{
+  position:absolute;
+  width:250px;
+  height:35px;
+  left:15px;
+  top:88px;
+  background:#fff1f6;
+  border-radius:50%;
+  z-index:4
+}
+
+.drip{
+  position:absolute;
+  width:22px;
+  height:38px;
+  background:#fff1f6;
+  border-radius:0 0 15px 15px;
+  top:95px;
+  z-index:5
+}
+
+.drip1{
+  left:45px
+}
+
+.drip2{
+  left:95px;
+  height:28px
+}
+
+.drip3{
+  left:150px;
+  height:42px
+}
+
+.drip4{
+  left:200px;
+  height:25px
+}
+
+
+/* CANDLE */
+
+.candle{
+  position:absolute;
+  width:20px;
+  height:70px;
+  left:130px;
+  top:5px;
+  background:repeating-linear-gradient(
+    -45deg,
+    #fff,
+    #fff 8px,
+    #e89ab3 8px,
+    #e89ab3 15px
+  );
+  border-radius:5px;
+  z-index:7
+}
+
+
+/* FLAME */
+
+.flame{
+  position:absolute;
+  width:24px;
+  height:36px;
+  left:128px;
+  top:-28px;
+  background:#ffb347;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  box-shadow:
+    0 0 12px #ffb347,
+    0 0 30px #ffcf70;
+  animation:flicker .35s infinite alternate;
+  z-index:8
+}
+
+.flame:after{
+  content:"";
+  position:absolute;
+  width:10px;
+  height:16px;
+  left:8px;
+  top:10px;
+  background:#fff5b5;
+  border-radius:50%;
+}
+
+@keyframes flicker{
+
+  from{
+    transform:rotate(-45deg) scale(1)
+  }
+
+  to{
+    transform:rotate(-42deg) scale(1.12)
+  }
+
+}
+
+
+/* FLAME GOES OUT */
+
+.flame.out{
+  animation:flameOut .7s forwards
+}
+
+@keyframes flameOut{
+
+  0%{
+    opacity:1;
+    transform:rotate(-45deg) scale(1)
+  }
+
+  60%{
+    opacity:.5;
+    transform:rotate(-45deg) scale(.6)
+  }
+
+  100%{
+    opacity:0;
+    transform:translateY(-25px) scale(.1)
+  }
+
+}
+
+
+/* BLOW BUTTON */
+
+.blow-button{
+  border:0;
+  border-radius:99px;
+  padding:16px 28px;
+  background:#7c2948;
+  color:white;
+  font:bold 16px Arial;
+  cursor:pointer;
+  box-shadow:0 10px 30px #7c294844;
+  transition:.25s
+}
+
+.blow-button:hover{
+  transform:scale(1.05)
+}
+
+.blow-button:disabled{
+  opacity:.6;
+  cursor:default
+}
+
+.make-wish{
+  font:bold 23px Arial;
+  color:#7c2948;
+  margin:15px 0
+}
+
+.cake-success{
+  display:none;
+  font:bold 27px Arial;
+  color:#7c2948;
+  animation:successPop .8s ease
+}
+
+@keyframes successPop{
+
+  from{
+    opacity:0;
+    transform:scale(.5)
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1)
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
 @media(max-width:500px){
+
   .countdown{
     gap:6px
   }
@@ -241,74 +568,159 @@ footer{
   .time-number{
     font-size:23px
   }
+
+  .cake{
+    transform:scale(.82);
+    margin-top:-10px;
+    margin-bottom:0
+  }
+
+  .cake-subtitle{
+    font-size:16px
+  }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <main>
+
+
+<!-- =========================
+     HERO
+     ========================= -->
 
 <div class="hero">
 
 <div class="content">
 
-<div class="small">A little birthday surprise for</div>
+<div class="small">
+A little birthday surprise for
+</div>
+
 
 <h1>
+
 Sanu
-<span>my love ♡</span>
+
+<span>
+my love ♡
+</span>
+
 </h1>
 
+
 <p style="font:17px Arial;color:#765966">
-Today is your 21st birthday... and I just wanted to make something that is only for you.
+
+Today is your 21st birthday...
+and I just wanted to make something
+that is only for you.
+
 </p>
 
 
 <!-- COUNTDOWN -->
 
 <div class="countdown-title">
-Something special happens at 12:00 AM ♡
+
+Something special happens at 11:45 PM ♡
+
 </div>
+
 
 <div class="countdown" id="countdown">
 
-<div class="time-box">
-<span class="time-number" id="hours">00</span>
-<span class="time-label">Hours</span>
-</div>
 
 <div class="time-box">
-<span class="time-number" id="minutes">00</span>
-<span class="time-label">Minutes</span>
+
+<span
+class="time-number"
+id="hours">
+00
+</span>
+
+<span class="time-label">
+Hours
+</span>
+
 </div>
+
 
 <div class="time-box">
-<span class="time-number" id="seconds">00</span>
-<span class="time-label">Seconds</span>
-</div>
+
+<span
+class="time-number"
+id="minutes">
+00
+</span>
+
+<span class="time-label">
+Minutes
+</span>
 
 </div>
 
-<div class="birthday-message" id="birthdayMessage">
-✨ It's 12:00 AM, Sanu! ✨<br>
+
+<div class="time-box">
+
+<span
+class="time-number"
+id="seconds">
+00
+</span>
+
+<span class="time-label">
+Seconds
+</span>
+
+</div>
+
+
+</div>
+
+
+<div
+class="birthday-message"
+id="birthdayMessage">
+
+✨ It's 11:45 PM, Sanu! ✨
+<br>
 ❤️ Happiest Birthday, my love ❤️
+
 </div>
 
 
 <br>
 
-<button class="btn" onclick="reveal()">
+
+<button
+class="btn"
+onclick="reveal()">
+
 Open your birthday surprise ♥
+
 </button>
 
-</div>
+
 </div>
 
+</div>
+
+
+<!-- =========================
+     EXISTING BIRTHDAY MESSAGE
+     ========================= -->
 
 <section id="gift" style="display:none">
 
 <div class="card">
+
 
 <img
 class="photo"
@@ -316,17 +728,35 @@ src="https://raw.githubusercontent.com/Pradipd1/portfolio/main/sanu/photo.jpg"
 alt="A special photo of us"
 >
 
-<div class="heart">♥</div>
 
-<h2>Happiest Birthdayyy, Sanu!</h2>
+<div class="heart">
+♥
+</div>
+
+
+<h2>
+Happiest Birthdayyy, Sanu!
+</h2>
+
 
 <p class="message">
-i love u merii pyariiii sanuuu ❤️<br>
-u r the bestest thing that ever happened to me ever.<br>
-i wih u get everything whatever u wanted.<br>
+
+i love u merii pyariiii sanuuu ❤️
 <br>
-<b>Happiestt birthdayyy mayaaaaaaaaa 💕</b>
+
+u r the bestest thing that ever happened to me ever.
+<br>
+
+i wish u get everything whatever u wanted.
+
+<br><br>
+
+<b>
+Happiestt birthdayyy mayaaaaaaaaa 💕
+</b>
+
 </p>
+
 
 </div>
 
@@ -337,16 +767,29 @@ i wih u get everything whatever u wanted.<br>
 
 <div class="card">
 
-<h2>Our little memory</h2>
+<h2>
+Our little memory
+</h2>
+
 
 <p class="memory">
-As we got to celebrate your 21st today virtually,<br>
-soon we will celebrate moree in personally<br>
+
+As we got to celebrate your 21st today virtually,
+<br>
+
+soon we will celebrate moree in personally
+<br>
+
 and literally I can't wait, baby. 🥹❤️
+
 </p>
 
+
 <p class="memory">
-This is only the beginning of all the birthdays I want to celebrate with you.
+
+This is only the beginning of all the birthdays
+I want to celebrate with you.
+
 </p>
 
 </div>
@@ -354,19 +797,34 @@ This is only the beginning of all the birthdays I want to celebrate with you.
 </section>
 
 
-<section id="end" style="display:none;text-align:center">
+<section
+id="end"
+style="display:none;text-align:center">
 
 <div class="card">
 
-<h2>For my Sanu ♡</h2>
+<h2>
+For my Sanu ♡
+</h2>
+
 
 <p class="message">
-May you get everything you have ever wished for.<br>
-Keep smiling. Keep being you.<br>
-And remember... you are very, very loved. ❤️
+
+May you get everything you have ever wished for.
+<br>
+
+Keep smiling. Keep being you.
+<br>
+
+And remember...
+you are very, very loved. ❤️
+
 </p>
 
-<div class="heart">♡</div>
+
+<div class="heart">
+♡
+</div>
 
 </div>
 
@@ -374,132 +832,445 @@ And remember... you are very, very loved. ❤️
 
 
 <footer>
-Made with love, just for Sanu • 03.10.2026
+
+Made with love, just for Sanu • 02.10.2026
+
 </footer>
+
 
 </main>
 
 
-<button class="music" id="music">♫</button>
+
+<!-- =========================
+     CAKE SURPRISE
+     ========================= -->
+
+<div id="cakeSurprise">
+
+<div class="cake-content">
+
+
+<div class="cake-title">
+
+🎂 A little something for you...
+
+</div>
+
+
+<div class="cake-subtitle">
+
+Sanu... it's finally time. ❤️
+<br>
+
+Close your eyes, make a wish...
+and get ready.
+
+</div>
+
+
+<!-- CAKE -->
+
+<div class="cake">
+
+
+<div class="candle">
+
+</div>
+
+
+<div
+class="flame"
+id="flame">
+
+</div>
+
+
+<div class="cake-top">
+
+</div>
+
+
+<div class="frosting">
+
+</div>
+
+
+<div class="drip drip1">
+
+</div>
+
+
+<div class="drip drip2">
+
+</div>
+
+
+<div class="drip drip3">
+
+</div>
+
+
+<div class="drip drip4">
+
+</div>
+
+
+<div class="cake-body">
+
+</div>
+
+
+</div>
+
+
+<div
+class="make-wish"
+id="wishText">
+
+🕯️ Make a wish, my love...
+
+</div>
+
+
+<button
+class="blow-button"
+id="blowButton"
+onclick="blowCandle()"
+style="display:none">
+
+💨 Blow the candle
+
+</button>
+
+
+<div
+class="cake-success"
+id="cakeSuccess">
+
+🎉 HAPPY BIRTHDAY, SANU! 🎉
+<br><br>
+
+❤️ I LOVE YOU ❤️
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- MUSIC -->
+
+<button
+class="music"
+id="music">
+
+♫
+
+</button>
+
 
 
 <script>
 
-/* =========================
-   LIVE COUNTDOWN
-   Target: 11:45 PM IST today
-   ========================= */
+
+/* ==================================================
+   COUNTDOWN TO 11:45 PM TODAY
+   ================================================== */
 
 function updateCountdown(){
 
   const now = new Date();
 
-  // 11:45 PM today in the user's local timezone.
-  // Since the page is intended for IST, this will work correctly
-  // when opened in India.
-
   const target = new Date();
 
   target.setHours(23,45,0,0);
+
 
   let difference = target - now;
 
 
   /*
-    If the countdown target has already passed,
-    show the birthday message.
+     When 11:45 PM arrives,
+     start the cake sequence.
   */
 
   if(difference <= 0){
 
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
+    document.getElementById("hours").textContent="00";
 
-    document.getElementById("countdown").style.display = "none";
+    document.getElementById("minutes").textContent="00";
 
-    document.getElementById("birthdayMessage").style.display = "block";
+    document.getElementById("seconds").textContent="00";
+
+
+    document.getElementById("countdown").style.display="none";
+
+
+    document.getElementById("birthdayMessage").style.display="block";
+
+
+    startCakeSurprise();
 
     return;
+
   }
 
 
-  const hours = Math.floor(difference / (1000 * 60 * 60));
+  const hours =
+    Math.floor(
+      difference/(1000*60*60)
+    );
+
 
   const minutes =
-    Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    Math.floor(
+      (difference%(1000*60*60))
+      /(1000*60)
+    );
+
 
   const seconds =
-    Math.floor((difference % (1000 * 60)) / 1000);
+    Math.floor(
+      (difference%(1000*60))/1000
+    );
 
 
   document.getElementById("hours").textContent =
     String(hours).padStart(2,"0");
 
+
   document.getElementById("minutes").textContent =
     String(minutes).padStart(2,"0");
 
+
   document.getElementById("seconds").textContent =
     String(seconds).padStart(2,"0");
+
 }
 
 
-/* Update immediately */
 updateCountdown();
 
-/* Update every second */
 setInterval(updateCountdown,1000);
 
 
 
-/* =========================
-   FALLING PETALS
-   ========================= */
+/* ==================================================
+   CAKE SEQUENCE
+   ================================================== */
+
+let cakeStarted=false;
+
+
+function startCakeSurprise(){
+
+  if(cakeStarted)
+    return;
+
+  cakeStarted=true;
+
+
+  const cake=
+    document.getElementById("cakeSurprise");
+
+
+  /*
+     Show cake immediately at 11:45 PM.
+  */
+
+  cake.style.display="flex";
+
+
+  /*
+     Give her 5 seconds to look at the cake
+     before showing the blow button.
+  */
+
+  setTimeout(()=>{
+
+    document.getElementById("wishText").innerHTML=
+      "🕯️ Now make your wish... and blow the candle ❤️";
+
+
+    document.getElementById("blowButton").style.display=
+      "inline-block";
+
+  },5000);
+
+}
+
+
+
+/* ==================================================
+   BLOW CANDLE
+   ================================================== */
+
+function blowCandle(){
+
+  const flame=
+    document.getElementById("flame");
+
+  const button=
+    document.getElementById("blowButton");
+
+  const wish=
+    document.getElementById("wishText");
+
+  const success=
+    document.getElementById("cakeSuccess");
+
+
+  /*
+     Prevent multiple clicks.
+  */
+
+  button.disabled=true;
+
+
+  /*
+     Blow out flame.
+  */
+
+  flame.classList.add("out");
+
+
+  wish.style.display="none";
+
+
+  button.style.display="none";
+
+
+  /*
+     Wait for flame animation,
+     then celebrate.
+  */
+
+  setTimeout(()=>{
+
+    success.style.display="block";
+
+
+    /*
+       Birthday hearts/confetti.
+    */
+
+    for(let i=0;i<100;i++){
+
+      setTimeout(
+        petal,
+        i*25
+      );
+
+    }
+
+
+    /*
+       After celebration,
+       automatically close cake screen
+       and reveal the original message.
+    */
+
+    setTimeout(()=>{
+
+      document
+        .getElementById("cakeSurprise")
+        .style.display="none";
+
+
+      reveal();
+
+    },4500);
+
+  },700);
+
+}
+
+
+
+/* ==================================================
+   FALLING HEARTS / PETALS
+   ================================================== */
 
 function petal(){
 
-  let x=document.createElement('div');
+  let x=
+    document.createElement("div");
 
-  x.className='p';
 
-  x.textContent=['♥','♡','✦','❀'][Math.floor(Math.random()*4)];
+  x.className="p";
 
-  x.style.left=Math.random()*100+'vw';
 
-  x.style.animationDuration=(4+Math.random()*4)+'s';
+  x.textContent=
+    ["♥","♡","✦","❀","🎉","💕"]
+    [Math.floor(Math.random()*6)];
+
+
+  x.style.left=
+    Math.random()*100+"vw";
+
+
+  x.style.animationDuration=
+    (4+Math.random()*4)+"s";
+
 
   document.body.appendChild(x);
 
-  setTimeout(()=>x.remove(),8000);
+
+  setTimeout(
+    ()=>x.remove(),
+    8000
+  );
+
 }
 
 
 
-/* =========================
-   REVEAL SURPRISE
-   ========================= */
+/* ==================================================
+   REVEAL EXISTING SURPRISE
+   ================================================== */
 
 function reveal(){
 
-  ['gift','memory','end'].forEach(
-    id=>document.getElementById(id).style.display='block'
+  ["gift","memory","end"].forEach(
+    id=>
+      document
+      .getElementById(id)
+      .style.display="block"
   );
 
-  for(let i=0;i<60;i++)
-    setTimeout(petal,i*35);
+
+  for(let i=0;i<60;i++){
+
+    setTimeout(
+      petal,
+      i*35
+    );
+
+  }
+
 
   document
-    .getElementById('gift')
-    .scrollIntoView({behavior:'smooth'});
+    .getElementById("gift")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
 }
 
 
 
-/* =========================
+/* ==================================================
    LITTLE MUSIC
-   ========================= */
+   ================================================== */
 
-let ctx,playing=false,timer;
+let ctx,
+    playing=false,
+    timer;
+
 
 const notes=[
   261.63,
@@ -517,63 +1288,91 @@ const notes=[
 ];
 
 
-document.getElementById('music').onclick=()=>{
+document
+  .getElementById("music")
+  .onclick=()=>{
 
-  if(!ctx)
-    ctx=new AudioContext();
-
-  if(playing){
-
-    clearInterval(timer);
-
-    playing=false;
-
-    return;
-  }
-
-  playing=true;
-
-  let i=0;
+    if(!ctx)
+      ctx=new AudioContext();
 
 
-  const play=()=>{
+    if(playing){
 
-    let o=ctx.createOscillator();
+      clearInterval(timer);
 
-    let g=ctx.createGain();
+      playing=false;
 
-    o.type='sine';
+      return;
 
-    o.frequency.value=notes[i++%notes.length];
+    }
 
-    g.gain.setValueAtTime(
-      .0001,
-      ctx.currentTime
-    );
 
-    g.gain.exponentialRampToValueAtTime(
-      .07,
-      ctx.currentTime+.03
-    );
+    playing=true;
 
-    g.gain.exponentialRampToValueAtTime(
-      .0001,
-      ctx.currentTime+.55
-    );
 
-    o.connect(g).connect(ctx.destination);
+    let i=0;
 
-    o.start();
 
-    o.stop(ctx.currentTime+.6);
+    const play=()=>{
+
+      let o=
+        ctx.createOscillator();
+
+
+      let g=
+        ctx.createGain();
+
+
+      o.type="sine";
+
+
+      o.frequency.value=
+        notes[i++%notes.length];
+
+
+      g.gain.setValueAtTime(
+        .0001,
+        ctx.currentTime
+      );
+
+
+      g.gain.exponentialRampToValueAtTime(
+        .07,
+        ctx.currentTime+.03
+      );
+
+
+      g.gain.exponentialRampToValueAtTime(
+        .0001,
+        ctx.currentTime+.55
+      );
+
+
+      o.connect(g).connect(
+        ctx.destination
+      );
+
+
+      o.start();
+
+
+      o.stop(
+        ctx.currentTime+.6
+      );
+
+    };
+
+
+    play();
+
+
+    timer=
+      setInterval(
+        play,
+        650
+      );
+
   };
-
-
-  play();
-
-  timer=setInterval(play,650);
-
-};
 
 </script>
 
